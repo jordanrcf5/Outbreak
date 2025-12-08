@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -10,6 +12,8 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool shouldJump;
+
+    public int damage = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

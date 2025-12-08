@@ -241,6 +241,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2383621313049399743, guid: a2f84daa9eb065243a7685d81f5ce7c4, type: 3}
   m_PrefabInstance: {fileID: 436446449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &187527093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 187527094}
+  - component: {fileID: 187527096}
+  - component: {fileID: 187527095}
+  m_Layer: 5
+  m_Name: HeartContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &187527094
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187527093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 911421387}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -894, y: 472}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &187527095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187527093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a255b09bc00bfd44bb263ed25f1f217d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  heartPrefab: {fileID: 3150848324987532322, guid: b213ca5ae6b67b54d8a6b70b00d0e1d9, type: 3}
+  fullHeartSprite: {fileID: -4772778903540007978, guid: baab62be922e97e41969d11b8060a93e, type: 3}
+  emptyHeartSprite: {fileID: -3953335491153826122, guid: baab62be922e97e41969d11b8060a93e, type: 3}
+--- !u!114 &187527096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187527093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &296280066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,7 +2433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -117}
+  m_AnchoredPosition: {x: 896, y: -117}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &489509142
@@ -4359,6 +4437,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 489509141}
+  - {fileID: 187527094}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6617,6 +6696,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6043983933310148137, guid: fc47fc2879a569b42b018a3ed1b7c182, type: 3}
   m_PrefabInstance: {fileID: 354506359254706135}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1402553377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402553367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95fdf847e43c20c4c80a7f2ef9552eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  maxHealth: 3
+  healthUI: {fileID: 187527095}
 --- !u!1 &1702827593
 GameObject:
   m_ObjectHideFlags: 0
@@ -10064,7 +10157,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6043983933310148137, guid: fc47fc2879a569b42b018a3ed1b7c182, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1339273736}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6905286522073354552, guid: fc47fc2879a569b42b018a3ed1b7c182, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1402553377}
   m_SourcePrefab: {fileID: 100100000, guid: fc47fc2879a569b42b018a3ed1b7c182, type: 3}
 --- !u!1001 &3462414473343063388
 PrefabInstance:
