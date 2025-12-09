@@ -28,11 +28,17 @@ public class PlayerHealth : MonoBehaviour
         if (enemy)
         {
             TakeDamage(enemy.damage);
+            SoundEffectManager.Play("PlayerHit");
         }
         Trap trap  = collision.GetComponent<Trap>();
         if (trap && trap.damage > 0)
         {
             TakeDamage(trap.damage);
+        }
+        else if (trap)
+        {
+            //play bounce sound
+            SoundEffectManager.Play("Bounce");
         }
     }
 
