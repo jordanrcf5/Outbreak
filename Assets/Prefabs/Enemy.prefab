@@ -183,3 +183,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  damage: 1
+  maxHealth: 3
+  lootTable:
+  - itemPrefab: {fileID: 3427406358284331939, guid: a2f84daa9eb065243a7685d81f5ce7c4, type: 3}
+    dropChance: 80
+  - itemPrefab: {fileID: 6911013542548166064, guid: 3bdcc4e2798a9804983fc6d40f318cbc, type: 3}
+    dropChance: 60

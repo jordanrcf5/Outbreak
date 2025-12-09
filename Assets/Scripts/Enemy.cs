@@ -19,7 +19,10 @@ public class Enemy : MonoBehaviour
     private int currentHealth;
     private SpriteRenderer spriteRenderer;
     private Color ogColor;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [Header("Loot")]
+    public List<LootItem> lootTable = new List<LootItem>();
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,34 +32,23 @@ public class Enemy : MonoBehaviour
         ogColor = spriteRenderer.color;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //Is grounded?
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
 
-        //Player direction
         float direction = Mathf.Sign(player.position.x - transform.position.x);
 
-        //Player above direction
-        bool isPlayerAbove = Physics2D.Raycast(transform.position, Vector2.up, 5f, 1 <<player.gameObject.layer);
+        bool isPlayerAbove = Physics2D.Raycast(transform.position, Vector2.up, 5f, 1 << player.gameObject.layer);
 
         if (isGrounded)
         {
-            //Chase player
             rb.linearVelocity = new Vector2(direction * chaseSpeed, rb.linearVelocity.y);
 
-            //Jump if there's a gap ahead and no ground in front
-            //Else if there's player above and platform above
-
-            //If there's ground
             RaycastHit2D groundInFront = Physics2D.Raycast(transform.position, new Vector2(direction, 0), 2f, groundLayer);
-            //If gap
             RaycastHit2D gapAhead = Physics2D.Raycast(transform.position + new Vector3(direction, 0, 0), Vector2.down, 2f, groundLayer);
-            // If there's platform above
             RaycastHit2D platformAbove = Physics2D.Raycast(transform.position, Vector2.up, 5f, groundLayer);
 
-            if(!groundInFront.collider && !gapAhead.collider)
+            if (!groundInFront.collider && !gapAhead.collider)
             {
                 shouldJump = true;
             }
@@ -69,11 +61,10 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(isGrounded && shouldJump)
+        if (isGrounded && shouldJump)
         {
             shouldJump = false;
             Vector2 direction = (player.position - transform.position).normalized;
-
             Vector2 jumpDirection = direction * jumpForce;
 
             rb.AddForce(new Vector2(jumpDirection.x, jumpForce), ForceMode2D.Impulse);
@@ -84,7 +75,7 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= damage;
         StartCoroutine(FlashWhite());
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -99,6 +90,24 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        foreach (LootItem lootItem in lootTable)
+        {
+            if (UnityEngine.Random.Range(0f, 100f) <= lootItem.dropChance)
+            {
+                InstantiateLoot(lootItem.itemPrefab);
+            }
+            break;
+        }
+
         Destroy(gameObject);
+    }
+
+    void InstantiateLoot(GameObject loot)
+    {
+        if (loot)
+        {
+            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+            droppedLoot.GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
 }
