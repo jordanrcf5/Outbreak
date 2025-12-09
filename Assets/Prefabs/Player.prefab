@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5315122079674254854}
   - component: {fileID: 4998055887777305143}
   - component: {fileID: 1138543545004326235}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SmokeFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4845,7 +4845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3259804710714695431}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4876,7 +4876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3704107461960783201}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4915,7 +4915,7 @@ GameObject:
   - component: {fileID: 4085448649713263568}
   - component: {fileID: 8538314050808013825}
   - component: {fileID: 60202516509499063}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5200,6 +5200,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: bedbd986-a3a3-470a-aafa-ca71143dde3a
     m_ActionName: 'Player/Hold[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e182c9f1-c7ea-4b5c-8f9f-74363d009e4f
+    m_ActionName: 'Player/Dash[/Keyboard/q,/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -5221,6 +5225,9 @@ MonoBehaviour:
   animator: {fileID: 4085448649713263568}
   smokeFX: {fileID: 4998055887777305143}
   moveSpeed: 5
+  dashSpeed: 20
+  dashDuration: 0.25
+  dashCooldown: 0.1
   jumpPower: 10
   maxJumps: 2
   groundCheckPos: {fileID: 3704107461960783201}
